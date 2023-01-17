@@ -1,2 +1,3 @@
-# addFunctionalTest
-add functional in lib for testing
+# Домашнее задание номер 1
+
+
