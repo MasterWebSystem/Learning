@@ -6,8 +6,8 @@
 
 Для начало вам нужно будет склонировать репозиторий к себе на компьютер - вы можете использовать 3 способа, 2 из с помощью git bash:
  1. скачать архив
- 2. выполнить команду в git bash: 'git clone https://github.com/MasterWebSystem/addFunctionalTest.git'
- 3. выполнить команду в git bash: 'git clone ssh://git@github.com:MasterWebSystem/addFunctionalTest.git
+ 2. выполнить команду в git bash: 'git clone https://github.com/MasterWebSystem/Learning.git'
+ 3. выполнить команду в git bash: 'git clone ssh://git@github.com:MasterWebSystem/Learning.git'
   
 Этот файл будет пополнятся информацией в течении обучения.
  
