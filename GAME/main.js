@@ -4,6 +4,7 @@
     // Этап 1. Создайте функцию, генерирующую массив парных чисел. Пример массива, который должна возвратить функция: [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8].count - количество пар.
 
     let numbersArray = []
+    
     let input = document.querySelector('#v-a')
     let btn = document.querySelector('.btn')
 
@@ -76,7 +77,7 @@
 
                 if (count <= 0) {
                     window.location.reload()
-                    setInterval(timer)
+                    clearInterval(timer)
                 }
 
             
@@ -121,6 +122,8 @@
                         secondCard = null
                     }
                 }
+
+                // конец игры
             
                 if (document.querySelectorAll('.card.success').length === cardNumbers.length) {
                     let count = 6;
@@ -191,21 +194,8 @@
     }
 
 
-       
-   
 
-
-
-  function countLog () {
-    if (!input.value) {
-        return
-    }
-
-   
-  }
-
-  input.addEventListener('change', (event) => {
-
+  input.addEventListener('change', () => {
     response = Number(input.value)
     startGame(response)
 })
