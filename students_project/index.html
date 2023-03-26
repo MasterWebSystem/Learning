@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список студентов</title>
+
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@600&display=swap" rel="stylesheet">
+
+    <script defer src="lib/jquery-3.6.4.min.js"></script>
+    <script defer src="lib/jquery.maskedinput.min.js"></script>
+    <script defer src="main.js"></script>
+</head>
+
+<body>
+    <!-- Этап 1. Создайте верстку элементов, которые будут статичны (неизменны).  -->
+    <div class="screen-welcome">
+        <h1>Добро пожаловать к нам</h1>
+        <p class="main-description"></p>
+        <p class="main-end"></p>
+        
+    </div>
+
+    <div class="container">
+
+        
+        <!-- Таблица -->
+       <div class="students-table">
+            <div class="students-table__title">Наши студенты</div>
+            <div class="students-table__panel">
+                <div class="students-table__btn btn">
+                    <button type="button">Добавить студента</button>
+                </div>
+                <div class="students-table__search">
+                    <input type="text" placeholder="Фильтрация" id="filter">
+                </div>
+                <div class="students-table__select">
+                    <div class="select">
+                        <div class="current__select">Ф.И.O.</div>
+                        <div class="options__select">
+                            <div class="option" value="Ф.И.O." id="fio">Ф.И.O.</div>
+                            <div class="option" value="Факультет" id="faculty">Факультет</div>
+                            <div class="option" value="Дата рождения" id="dateBirth">Дата рождения</div>
+                            <div class="option" value="Годы обучения" id="learnYear">Годы обучения</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="students-table__students">
+               <div class="student-table__header">
+                    <div class="students-table__stroke">
+                        <div class="students-table__list">
+                            <div class="students-table__item">
+                                Ф.И.O.
+                            </div>
+                            <div class="students-table__item">
+                                Факультет
+                            </div>
+                            <div class="students-table__item">
+                                Дата рождения
+                            </div>
+                            <div class="students-table__item">
+                                Годы обучения
+                            </div>
+                        </div>
+                    </div>
+               </div>
+               <div class="students-table__body"></div>
+            </div>
+       </div> 
+       <!-- /Таблица -->
+
+       <div class="overlay"></div>
+       <div class="modal-form__container">
+            <form action="#" class="modal-form__form">
+                <div class="modal-form__title">Добавить студента</div>
+                <span class="error"></span>
+                <input type="text" class="modal-form__input" placeholder="Фамилия студента" name="lastname">
+                <input type="text" class="modal-form__input" placeholder="Имя студента" name="name">
+                <input type="text" class="modal-form__input" placeholder="Отчество студента" name="surname">
+                <input type="text" class="modal-form__input" placeholder="Факультет студента" name="faculty">
+                <input type="text" class="modal-form__input" id="birthDate" placeholder="Дата рождения" name="birthdate">
+                <input type="text" class="modal-form__input" id="learnYears" placeholder="Годы обучения" name="learndate">
+                <div class="modal-form__btn btn">
+                    <button type="submit">Добавить студента</button>
+                </div>
+            </form>
+       </div>
+    </div>
+</body>
+
+</html>
