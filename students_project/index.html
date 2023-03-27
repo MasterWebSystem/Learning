@@ -7,12 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Список студентов</title>
 
+    <!-- Стили -->
+
     <link rel="stylesheet" href="css/main.css">
+
+    <!-- Шрифт -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@600&display=swap" rel="stylesheet">
 
+    <!-- Скрипты -->
     <script defer src="lib/jquery-3.6.4.min.js"></script>
     <script defer src="lib/jquery.maskedinput.min.js"></script>
     <script defer src="main.js"></script>
@@ -20,12 +25,6 @@
 
 <body>
     <!-- Этап 1. Создайте верстку элементов, которые будут статичны (неизменны).  -->
-    <div class="screen-welcome">
-        <h1>Добро пожаловать к нам</h1>
-        <p class="main-description"></p>
-        <p class="main-end"></p>
-        
-    </div>
 
     <div class="container">
 
@@ -40,39 +39,29 @@
                 <div class="students-table__search">
                     <input type="text" placeholder="Фильтрация" id="filter">
                 </div>
-                <div class="students-table__select">
-                    <div class="select">
-                        <div class="current__select">Ф.И.O.</div>
-                        <div class="options__select">
-                            <div class="option" value="Ф.И.O." id="fio">Ф.И.O.</div>
-                            <div class="option" value="Факультет" id="faculty">Факультет</div>
-                            <div class="option" value="Дата рождения" id="dateBirth">Дата рождения</div>
-                            <div class="option" value="Годы обучения" id="learnYear">Годы обучения</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </div> <!-- ./panel-->
             <div class="students-table__students">
                <div class="student-table__header">
                     <div class="students-table__stroke">
                         <div class="students-table__list">
-                            <div class="students-table__item">
+                            <div class="students-table__item --table-header">
                                 Ф.И.O.
                             </div>
-                            <div class="students-table__item">
+                            <div class="students-table__item --table-header">
                                 Факультет
                             </div>
-                            <div class="students-table__item">
+                            <div class="students-table__item --table-header">
                                 Дата рождения
                             </div>
-                            <div class="students-table__item">
+                            <div class="students-table__item --table-header">
                                 Годы обучения
                             </div>
                         </div>
                     </div>
-               </div>
+               </div> <!-- ./table header-->
+               
                <div class="students-table__body"></div>
-            </div>
+            </div> <!-- ./table-->
        </div> 
        <!-- /Таблица -->
 
@@ -92,7 +81,7 @@
                 </div>
             </form>
        </div>
-    </div>
+    </div> <!-- ./container-->
 </body>
 
 </html>

@@ -1,62 +1,9 @@
 // Этап 1. В HTML файле создайте верстку элементов, которые будут статичны(неизменны).
     let studenstTableBody = document.querySelector('.students-table__body')
-    let body = document.querySelector('body')
 
-    let welcome = document.querySelector('.screen-welcome')
-    let welcomeTitle = document.querySelector('.screen-welcome h1')
-
-    welcome.style.overflow = 'hidden'
-
-    welcomeTitle.addEventListener('mouseover', () => {
-        welcome.style.transform = 'scale(200%)'
-        welcome.style.opacity = '0'
-        welcome.style.color = 'transparent'
-       
-
-        setTimeout(() => {
-            welcome.style.display = 'none'
-        }, 1000)
-    })
-
-    setTimeout(() => {
-        body.style.overflowX = 'scroll'
-    }, 1000)
-
-
-    let text = `Мы компания арифлейм, разрабатываем всякую дичь ради дичи.
-    Мы разработали очередной проект, для добавления шкалаты в базу.
-    В разработке участвовали наши лучшие разработчики в мире - Леха и Максон.
-    Эти типы просто лауреаты среди айтишников.`;
-    let delay = 100; // cкорость
-    let elem = document.querySelector('.main-description');
- 
-    let print_text = function(text, elem, delay) {
-        if(text.length > 0) {
-            elem.innerHTML += text[0];
-            setTimeout(
-                function() {
-                    print_text(text.slice(1), elem, delay); 
-                }, delay
-            );
-        }
-    }
-    print_text(text, elem, delay);
-
-    setTimeout(() => {
-        let text = `Для использования проекта, вам надо будет всего лишь-то взять и навести мышкой на заголовок и все :)`
-        let elem = document.querySelector('.main-end')
-        print_text(text, elem, 100);
-    }, 25000)
-
-    
 // 1.1 Сортировка
 
-let currentSelect = document.querySelector('.current__select')
-let optionsWrapper = document.querySelector('.options__select')
 let filterInp = document.querySelector('#filter')
-
-
-
 
 
 
@@ -234,14 +181,9 @@ function renderStudentsTable(studentsArray) {
     studenstTableBody.innerHTML = ''
     let copyStudentsList = [...studentsArray]
 
-    let options = document.querySelectorAll('.option')
+    let options = document.querySelectorAll('.--table-header')
 
-    options.forEach(option => {
-        option.addEventListener('click', () => {
-            currentSelect.textContent = option.textContent
-            optionsWrapper.style.display = 'none'
-        }) 
-    })
+
 
 
     
@@ -304,8 +246,6 @@ filterInp.addEventListener('input', () => {
         }
     })
 
-  
-    console.log(copyStudentsList)
     renderStudentsTable(copyStudentsList)
 
 })
@@ -441,11 +381,6 @@ filterInp.addEventListener('input', () => {
 
 
 
-currentSelect.addEventListener('click', () => {
-    currentSelect.textContent = ''
-    optionsWrapper.style.display = 'block'
-   
-})
 
     function sortStudentsListFIO(arr) {
         arr = arr.sort((a, b) => {
