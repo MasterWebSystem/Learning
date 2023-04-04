@@ -1,4 +1,5 @@
 // SERVER
+let studenstTableBody = document.querySelector('.students-table__body')
 
 let hereMessage = document.querySelector('.here-message')
 
@@ -23,7 +24,9 @@ async function getStudentsServe() {
         headers: {'Content-Type': 'application/json'}
     })
 
+
     let data = response.json()
+
 
     return data
 }
@@ -32,17 +35,20 @@ let students_server = await getStudentsServe()
 
 let studentsList = []
 
-if ( students_server !== null) {
-    studentsList = students_server
-} 
-
-
-if (students_server.length == 0) {
-    hereMessage.style.display = 'flex'
+    if ( students_server !== null) {
+        studentsList = students_server
+    } 
     
-} else {
-    hereMessage.style.display = 'none'
-}
+    
+    
+    
+    if (students_server.length == 0) {
+        hereMessage.style.display = 'flex'
+        
+    } else {
+        hereMessage.style.display = 'none'
+       
+    }
 
 
 async function deleteStudentServe(id) {
@@ -65,8 +71,7 @@ async function deleteStudentServe(id) {
 
 
 
-// Этап 1. В HTML файле создайте верстку элементов, которые будут статичны(неизменны).
-    let studenstTableBody = document.querySelector('.students-table__body')
+// Этап 1. В HTML файле создайте верстку элементов, которые будут статичны(неизменны)
   
 
 
@@ -160,6 +165,7 @@ function getStudentItem(studentObj) {
         studentsItemDelete.addEventListener('click', () => {
             deleteStudentServe(studentObj.id)
             studentsList.remove()
+            hereMessage.style.display = 'flex'
 
         })
 
@@ -432,13 +438,13 @@ filterInp.addEventListener('input', () => {
 
     studentsList = []
 
-  
-    await addStudentServe(student)
+    let studentObj = await addStudentServe(student)
 
-   
-
+    studentsList.push(studentObj)
 
 
+    hereMessage.style.display = 'none'
+    studenstTableBody.innerHTML = ''
     renderStudentsTable(studentsList)
 
 
